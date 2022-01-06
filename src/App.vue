@@ -32,12 +32,8 @@
       ></v-app-bar-nav-icon>
       <v-toolbar-title>Vuetify Capacitor</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <v-icon>mdi-open-in-new</v-icon>
+      <v-btn>
+        <v-icon>mdi-user</v-icon>
       </v-btn>
     </v-app-bar>
 
