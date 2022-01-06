@@ -1,6 +1,11 @@
 <template>
   <v-app>
-    <v-navigation-drawer app clipped v-model="drawer">
+    <v-navigation-drawer
+      app
+      clipped
+      v-model="drawer"
+      v-if="!$vuetify.breakpoint.xsOnly"
+    >
       <v-list nav dense>
         <v-list-item-group>
           <v-list-item to="/">
@@ -21,7 +26,10 @@
     </v-navigation-drawer>
 
     <v-app-bar app dense clipped-left>
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon
+        v-if="!$vuetify.breakpoint.xsOnly"
+        @click="drawer = !drawer"
+      ></v-app-bar-nav-icon>
       <v-toolbar-title>Vuetify Capacitor</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
@@ -29,7 +37,6 @@
         target="_blank"
         text
       >
-        <span class="mr-2">Latest Release</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
@@ -40,7 +47,22 @@
       </v-container>
     </v-main>
 
-    <v-footer app> &copy; Fifcan.ORG </v-footer>
+    <v-bottom-navigation :value="vvv" app v-if="$vuetify.breakpoint.xsOnly">
+      <v-btn to="/">
+        <span>Home</span>
+        <v-icon>mdi-home</v-icon>
+      </v-btn>
+
+      <v-btn to="/about">
+        <span>About</span>
+
+        <v-icon>mdi-information</v-icon>
+      </v-btn>
+    </v-bottom-navigation>
+
+    <v-footer app v-if="!$vuetify.breakpoint.xsOnly">
+      &copy; Fifcan.ORG</v-footer
+    >
   </v-app>
 </template>
 
@@ -49,6 +71,7 @@ export default {
   name: "App",
   data: () => ({
     drawer: true,
+    vvv: null,
   }),
 };
 </script>

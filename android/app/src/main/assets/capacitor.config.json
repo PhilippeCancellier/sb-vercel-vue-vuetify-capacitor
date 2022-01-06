@@ -1,0 +1,7 @@
+{
+  "appId": "org.vue.app",
+  "appName": "Vue Vuetify App",
+  "bundledWebRuntime": false,
+  "webDir": "dist",
+  "npmClient": "npm"
+}
